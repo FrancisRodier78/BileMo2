@@ -128,5 +128,7 @@ class AppFixtures extends Fixture
 
         $manager->flush();
     }
+    /* Nom des routes
+    * @Route(name="login", path="/api/login_check", methods={"GET"})
+    */
 }
-

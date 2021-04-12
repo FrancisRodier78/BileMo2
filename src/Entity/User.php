@@ -8,7 +8,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ApiResource
+  * @ApiResource(
+ *  collectionOperations={"GET"={"path"="/v1/users/{id}"}, "POST"={"path"="/v1/user/{id}"}},
+ *  itemOperations={"GET"={"path"="/v1/user/{id}"},"DELETE"={"path"="/v1/user/{id}"}}
+ * )
+
  */
 class User
 {
