@@ -6,10 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
   * @ApiResource(
- *  collectionOperations={"GET"={"path"="/v1/users/{id}"}, "POST"={"path"="/v1/user/{id}"}},
+ *  collectionOperations={"GET"={"path"="/v1/users"}, "POST"={"path"="/v1/user"}},
  *  itemOperations={"GET"={"path"="/v1/user/{id}"},"DELETE"={"path"="/v1/user/{id}"}}
  * )
 
@@ -25,16 +27,22 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le nom de l'utilisateur est obligatoire.")
+     * @Assert\Length(min = 2, max = 255, minMessage = "Le nom de l'utilisateur doit êtres compris entre 3 et 255 caractères.", maxMessage = "Le nom de l'utilisateur doit êtres compris entre 3 et 255 caractères.")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le prénom de l'utilisateur est obligatoire.")
+     * @Assert\Length(min = 2, max = 255, minMessage = "Le prénom de l'utilisateur doit êtres compris entre 3 et 255 caractères.", maxMessage = "Le prénom de l'utilisateur doit êtres compris entre 3 et 255 caractères.")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse de l'utilisateur est obligatoire.")
+     * @Assert\Length(max = 255, maxMessage = "L'adresse de l'utilisateur ne doit pas dépasser 255 caractères.")
      */
     private $adresse;
 
@@ -45,6 +53,7 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="users")
+     * @Assert\NotBlank(message="Le client est obligatoire.")
      */
     private $client;
 
