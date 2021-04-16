@@ -12,10 +12,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
  * @ApiResource(
- *  collectionOperations={},
+ *  collectionOperations={"GET"={"path"="/v1/client/8"}},
  *  itemOperations={}
  * )
  */
+   
 class Client implements UserInterface
 {
     /**

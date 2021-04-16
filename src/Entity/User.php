@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
-  * @ApiResource(
+ * @ApiResource(
  *  collectionOperations={"GET"={"path"="/v1/users"}, "POST"={"path"="/v1/user"}},
  *  itemOperations={"GET"={"path"="/v1/user/{id}"},"DELETE"={"path"="/v1/user/{id}"}}
  * )
