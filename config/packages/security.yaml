@@ -45,5 +45,6 @@ security:
     access_control:
         - { path: ^/api/v1/produits, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/v1/produit,  roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/v1/client,   roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/v1/users,    roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/v1/user,     roles: IS_AUTHENTICATED_FULLY }
