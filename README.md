@@ -1,5 +1,7 @@
 # BileMo2
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca658633d0e14122ae3c85a50e8a478c)](https://app.codacy.com/gh/FrancisRodier78/BileMo2?utm_source=github.com&utm_medium=referral&utm_content=FrancisRodier78/BileMo2&utm_campaign=Badge_Grade_Settings)
+
 Création d'une API pour consulter une base de donnée regroupant des Produits et des Utilisateurs (achéteurs) lisible par des Clients (commerçants).
 
 Environnement utilisé durant le développement Symfony 5.1.* Composer 2.0.9 PHP 7.4.9 MySQL 5.7.31 
